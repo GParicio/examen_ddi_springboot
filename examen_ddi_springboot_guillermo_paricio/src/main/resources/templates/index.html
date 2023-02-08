@@ -8,12 +8,21 @@
 <ul>
 	<!--<a href="persona"><li>Personas</li></a>
 	<a href="mascota"><li>Mascotas</li></a>-->
-
 	<form th:action=@{wordle}>
 		<input type="text" name="palabra" placeholder="Introduce una palabra" size="50" method="POST">
 		<button type="submit">Enviar</button>
-
 	</form>
+	<!--Mostrar las palabras introducidas-->
+	<table>
+		<tr>
+			<th>Palabra</th>
+			<th>Numero de veces</th>
+		</tr>
+		<tr th:each="palabra : ${palabras}">
+			<td th:text="${palabra.palabra}"></td>
+			<td th:text="${palabra.numero}"></td>
+		</tr>
+		
 </ul>
 </body>
 </html>

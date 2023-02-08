@@ -1,14 +1,16 @@
 package veterinaria.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@AllArgsConstructor @NoArgsConstructor
 public class Palabra {
     /*Quiero hacer un wordle */
     private String palabra;
     private int numero;
 
-    public Palabra(String palabra, int numero) {
-        this.palabra = palabra;
-        this.numero = numero;
-    }
 
     public String getPalabra() {
         return palabra;

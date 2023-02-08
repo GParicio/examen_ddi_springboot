@@ -4,6 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import veterinaria.model.Palabra;
+
+
 @Controller
 public class IndexController {
 	
@@ -16,6 +19,7 @@ public class IndexController {
 	@GetMapping("wordle")
 	public String busquedaInit(ModelAndView model) {
 		model.setViewName("wordle");
+		model.addObject("palabra", new Palabra());
 		return "index";
 	}
 
