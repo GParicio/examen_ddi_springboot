@@ -1,15 +1,21 @@
 package veterinaria.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import veterinaria.model.Palabra;
+import veterinaria.service.IPalabraService;
 
 
 @Controller
 public class IndexController {
 	
+	@Autowired
+	IPalabraService service;
 
 	@GetMapping("/")
 	public String index() {
@@ -22,6 +28,12 @@ public class IndexController {
 		model.addObject("palabra", new Palabra());
 		return "index";
 	}
+
+	@PostMapping("wordle")
+    public String create(@ModelAttribute Palabra palabra) {
+    	service.insert(palabra);
+        return "index";
+    }
 
 	@GetMapping("")
 	public String mascota(ModelAndView model) {

@@ -6,30 +6,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @AllArgsConstructor @NoArgsConstructor
-public class Palabra {
+public class    Palabra {
     /*Quiero hacer un wordle */
+    @Getter @Setter
     private String palabra;
+
+    @Getter @Setter
     private int numero;
 
-
-    public String getPalabra() {
-        return palabra;
-    }
-
-    public void setPalabra(String palabra) {
-        this.palabra = palabra;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
+    @Getter @Setter
+    private int id;
+    
 
     @Override
     public String toString() {
         return "Palabra [numero=" + numero + ", palabra=" + palabra + "]";
     }
+
 }
