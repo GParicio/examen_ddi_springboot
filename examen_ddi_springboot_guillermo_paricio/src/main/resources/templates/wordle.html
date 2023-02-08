@@ -9,7 +9,7 @@
 	<!--<a href="persona"><li>Personas</li></a>
 	<a href="mascota"><li>Mascotas</li></a>-->
 
-	<form th:action=@{}>
+	<form th:action="@{/wordle}" method="POST">
 		<input type="text" name="palabra" placeholder="Introduce una palabra" size="50" method="POST">
 		<button type="submit">Enviar</button>
 

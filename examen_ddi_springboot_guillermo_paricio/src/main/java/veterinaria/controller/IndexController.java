@@ -14,9 +14,9 @@ public class IndexController {
 	}
 	
 	@GetMapping("wordle")
-	public ModelAndView busquedaInit(ModelAndView model) {
+	public String busquedaInit(ModelAndView model) {
 		model.setViewName("wordle");
-		return model;
+		return "index";
 	}
 
 	@GetMapping("")
