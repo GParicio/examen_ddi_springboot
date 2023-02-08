@@ -3,11 +3,9 @@ import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
-import veterinaria.repository.Level;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import veterinaria.repository.IPalabraRepo;
-import veterinaria.utils.WordGenerator;
 
 import veterinaria.model.Palabra;
 
@@ -23,8 +21,7 @@ public class PalabraService implements IPalabraService{
 	public IPalabraService servicePalabras;
 
 
-	@Autowired
-	private Level level;
+	
     
         @Override
         public List<Palabra> getAll() {
@@ -47,22 +44,7 @@ public class PalabraService implements IPalabraService{
         }
 
         
-	@Autowired
-	private WordGenerator wg;
-
-        public void initGame() {
-
-            String word = wg.generateNewWord(level.getMaxLength(), level.getMaxLength());
-            String wordToShow = word.toUpperCase().replaceAll("[^A-Z] ", "");
-    
-            word = Normalizer.normalize(word, Normalizer.Form.NFD)
-                            .toUpperCase().replaceAll("[^A-Z] ", "");
-            
-            Palabra palabra = new Palabra();
-            palabra.setPalabra(word);
-            palabra.setPalabraMostrar(wordToShow);
-            palabra.setIntentos(level.getTries());
-        }
+	
     
         @Override
         public void insert(Palabra palabra) {
