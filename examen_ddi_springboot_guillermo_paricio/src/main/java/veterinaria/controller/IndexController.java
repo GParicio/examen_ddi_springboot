@@ -13,7 +13,13 @@ public class IndexController {
 		return "index";
 	}
 	
-	@GetMapping("/goToMascota")
+	@GetMapping("wordle")
+	public ModelAndView busquedaInit(ModelAndView model) {
+		model.setViewName("wordle");
+		return model;
+	}
+
+	@GetMapping("")
 	public String mascota(ModelAndView model) {
 		return "redirect:/mascota";
 	}
