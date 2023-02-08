@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Actualiza</title>
+</head>
+<body>
+
+	<h2>Actualizar persona</h2>
+	<hr />
+	
+	<form action="#" th:action="@{/persona/create}" th:object="${persona}" method="POST">
+	
+		
+		<input type="hidden" id="id" th:field="*{id}" />
+		
+		<label for="persona">Nombre</label>
+		<input type="text" id="nombre" th:field="*{nombre}">
+		
+		<label for="persona">Dni</label>
+		<input type="text" id="dni" th:field="*{dni}">
+		<br/>
+		
+		<button type="submit">Actualizar</button>
+	</form>
+	
+	<a href="/persona">Volver al listado</a>
+	
+</body>
+</html>

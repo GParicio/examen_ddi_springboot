@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h2>Insertar persona</h2>
+<hr />
+
+<form th:object="${persona}" th:action="@{/persona/add}" method="post">
+        <label for="persona">DNI</label>
+        <input th:field="*{dni}" id="dni" placeholder="Dni" type="text">
+        
+        <label for="persona">Nombre</label>
+        <input th:field="*{nombre}" id="nombre" placeholder="Nombre" type="text">
+        
+        <button type="submit">Guardar</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Actualiza</title>
+</head>
+<body>
+
+	<h2>Seguro que quieres borrar a <span th:text="${persona.getNombre()}"></span></h2>
+	<hr />
+	
+	<form action="#" th:action="@{/persona/delete}" th:object="${persona}" method="POST">
+	
+		<input type="hidden" id="id" th:field="*{id}" />
+		
+		<button type="submit">Si, quiero borrarle</button>
+	</form>
+	
+	<a href="/persona">Volver al listado</a>
+	
+</body>
+</html>

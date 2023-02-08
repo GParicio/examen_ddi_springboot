@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Personas</title>
+</head>
+<body>
+	<h2>Listado de personas por busqueda</h2>
+	<hr />
+	
+	<form th:action="@{/persona/busqueda}" method="POST">
+		<input type="text" name="busqueda" th:value="${busqueda}" placeholder="Busca por nombre" size="50" >
+		<button type="submit">Buscar</button>
+	</form>
+	
+	
+	<table border="1" style="width:300px">
+	    <tr>
+	        <th colspan="5">Personas</th>
+	    </tr>
+		<tr th:each="p : ${personas}">
+		   <td><p th:text="${p.getDni()}"></p></td>
+	   	   <td><p th:text="${p.getNombre()}"></p></td>
+	   	   <td><a th:href="@{/persona/details/{id}(id=${p.getId()})}">Detalles</a></td>
+	   	   <td><a th:href="@{/persona/update/{id}(id=${p.getId()})}">Update</a></td>
+ 	   	   <td><a th:href="@{/persona/delete/{id}(id=${p.getId()})}">Delete</a></td>
+		</tr>
+	
+	</table>
+	
+	<a th:href="@{/persona/create}">Crear nueva persona</a>
+	<a th:href="@{/menuFromPersona}">Menu principal</a>
+</body>
+</html>

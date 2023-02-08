@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>mascotas</title>
+</head>
+<body>
+	<h2>Listado de mascotas</h2>
+	<hr />
+	
+	<table border="1" style="width:300px">
+	    <tr>
+	        <th colspan="5">Mascotas</th>
+	    </tr>
+	    <tr>
+	    	<td>Chip</td><td>Nombre</td><td>Vacunado</td><td colspan="2">CRUD</td>
+	    </tr>
+		<tr th:each="m : ${mascotas}">
+		   <td><p th:text="${m.getChip()}"></p></td>
+	   	   <td><p th:text="${m.getNombre()}"></p></td>
+	   	   <td><span th:if="${m.isVacunado()}">Si</span><span th:if="${!m.isVacunado()}">No</span></td>
+	   	   <td><a th:href="@{/mascota/update/{id}(id=${m.getId()})}">Update</a></td>
+ 	   	   <td><a th:href="@{/mascota/delete/{id}(id=${m.getId()})}">Delete</a></td>
+		</tr>
+	
+	</table>
+	
+	<a th:href="@{/mascota/create}">Crear nueva mascota</a>
+	<a th:href="@{/menuFromMascota}">Menu principal</a>
+</body>
+</html>
