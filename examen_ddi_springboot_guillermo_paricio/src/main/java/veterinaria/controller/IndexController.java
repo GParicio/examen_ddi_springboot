@@ -24,8 +24,9 @@ public class IndexController {
 	
 	@GetMapping("wordle")
 	public String busquedaInit(ModelAndView model) {
-		model.setViewName("wordle");
 		model.addObject("palabra", new Palabra());
+        model.addObject("personas", service.getAllPalabras());
+		model.setViewName("wordle");
 		return "index";
 	}
 

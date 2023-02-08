@@ -14,11 +14,20 @@ public class PalabraService implements IPalabraService{
         
         @Autowired
         private IPalabraRepo repo;
+
+        
+	@Autowired
+	public IPalabraService servicePalabras;
     
         @Override
         public List<Palabra> getAll() {
             return repo.getListado();
         }
+
+        @Override
+	public List<Palabra> getAllPalabras() {
+		return servicePalabras.getAll();
+	}
     
         @Override
         public Palabra getById(int id) {

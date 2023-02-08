@@ -16,6 +16,11 @@ public class    Palabra {
 
     @Getter @Setter
     private int id;
+
+    public Palabra(String palabra, int numero) {
+        this.palabra = palabra;
+        this.numero = numero;
+    }
     
 
     @Override

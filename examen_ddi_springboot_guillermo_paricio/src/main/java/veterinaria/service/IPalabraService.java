@@ -11,4 +11,5 @@ public interface IPalabraService {
         public void insert(Palabra palabra);
         public void update(Palabra palabra);
         public void delete(int id);
+        List<Palabra> getAllPalabras();
 }

@@ -16,7 +16,7 @@ public class PalabraRepo implements IPalabraRepo{
 	static List<Palabra> listado = new ArrayList<Palabra>();
 	
 	static {
-		listado.add(new Palabra("perro", "dog",1));
+		listado.add(new Palabra("perro", 1,1));   
 	}
 
 	@Override
