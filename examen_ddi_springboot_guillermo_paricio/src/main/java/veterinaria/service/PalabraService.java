@@ -21,45 +21,23 @@ public class PalabraService implements IPalabraService{
 	public IPalabraService servicePalabras;
 
 
-	
-    
-        @Override
-        public List<Palabra> getAll() {
-            return repo.getListado();
+	@Override
+    public void test(String palabra) {
+        Juego juego = repo.getListado();
+        Character[] wordCheck = wordle.getWord();
+        Word myWord = getWord(word);
+        for (Letter letter : myWord.getLetters()) {
+            letter.setColor(checkLetter(letter, wordCheck));
         }
+        // Change color of the letter cell
+        
+        wordle.addWord(myWord);
+    }
+    
 
         @Override
-	public List<Palabra> getAllPalabras() {
-		return servicePalabras.getAll();
+	public Palabra getAllPalabras() {
+		return repo.getListado();
 	}
     
-        @Override
-        public Palabra getById(int id) {
-            for (Palabra p : repo.getListado()) {
-                if (p.getId() == id) {
-                    return p;
-                }
-            }
-            return null;
-        }
-
-        
-	
-    
-        @Override
-        public void insert(Palabra palabra) {
-            repo.getListado().add(palabra);
-        }
-    
-        @Override
-        public void update(Palabra palabra) {
-            int index = repo.getListado().indexOf(getById(palabra.getId()));
-            repo.getListado().set(index, palabra);
-        }
-    
-        @Override
-        public void delete(int id) {
-            int index = repo.getListado().indexOf(getById(id));
-            repo.getListado().remove(index);
-        }
 }

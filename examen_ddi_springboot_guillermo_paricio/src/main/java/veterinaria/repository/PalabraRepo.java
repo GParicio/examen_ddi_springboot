@@ -13,14 +13,15 @@ import veterinaria.model.Palabra;
 @Repository
 public class PalabraRepo implements IPalabraRepo{
 	
-	static List<Palabra> listado = new ArrayList<Palabra>();
+	private static Palabra listado = new Palabra();
 	
-	static {
-		listado.add(new Palabra("perro", 1,1));   
-	}
+	@Override
+    public void reset() {
+        listado = new Palabra();
+    }
 
 	@Override
-	public List<Palabra> getListado() {
+	public Palabra getListado() {
 		return listado;
 	}
 	

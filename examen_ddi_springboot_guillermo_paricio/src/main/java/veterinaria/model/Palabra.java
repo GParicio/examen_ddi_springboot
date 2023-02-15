@@ -21,11 +21,27 @@ public class    Palabra {
         this.palabra = palabra;
         this.numero = numero;
     }
+
+    public Character[] getWord() {
+        return word;
+    }
+
+    public void setWord(Character[] word) {
+        this.word = word;
+    }
     
 
     @Override
     public String toString() {
         return "Palabra [numero=" + numero + ", palabra=" + palabra + "]";
+    }
+
+
+    public void setIntentos(int tries) {
+    }
+
+
+    public void setPalabraMostrar(String wordToShow) {
     }
 
 }

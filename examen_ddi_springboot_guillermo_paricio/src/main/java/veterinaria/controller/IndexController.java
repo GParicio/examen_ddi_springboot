@@ -22,18 +22,20 @@ public class IndexController {
 		return "index";
 	}
 	
-	@GetMapping("wordle")
-	public String busquedaInit(ModelAndView model) {
-		model.addObject("palabra", new Palabra());
-        model.addObject("personas", service.getAllPalabras());
-		model.setViewName("wordle");
-		return "index";
+	@GetMapping("/wordle")
+	public ModelAndView busquedaInit(ModelAndView mv) {
+		mv.setViewName("wordle");
+		mv.addObject("palabra", new Palabra());
+        mv.addObject("personas", service.getAllPalabras());
+		return mv;
 	}
 
-	@PostMapping("wordle")
-    public String create(@ModelAttribute Palabra palabra) {
-    	service.insert(palabra);
-        return "index";
+	@PostMapping("/wordle")
+    public ModelAndView create(@ModelAttribute("palabra") String palabra, ModelAndView mv) {
+		mv.setViewName("wordle");
+		service.insert(palabra);
+		mv.addObject("wordle", service.getAllPalabras());
+        return mv;
     }
 
 	@GetMapping("")

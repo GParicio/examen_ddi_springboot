@@ -8,5 +8,7 @@ import veterinaria.model.Palabra;
 
 public interface IPalabraRepo {
 	
-	List<Palabra> getListado();
+	void reset();
+
+	Palabra getListado();
 }
