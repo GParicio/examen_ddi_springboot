@@ -10,7 +10,7 @@ import com.gparicio.recuperacion.model.Wordle;
 @Profile("facil")
 @Repository
 public class NivelFacilRepositorio implements INivelRepositorio{
-    static Character[] palabra = {'A','B','C'};
+    static Character[] palabra = {'S','O','L'};
     static int intentos = 20;
     static List<Palabra> palabras = new ArrayList<Palabra>();
 

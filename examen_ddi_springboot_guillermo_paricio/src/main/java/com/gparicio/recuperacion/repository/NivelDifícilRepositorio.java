@@ -10,16 +10,16 @@ import com.gparicio.recuperacion.model.Wordle;
 @Profile("difícil")
 @Repository
 public class NivelDifícilRepositorio implements INivelRepositorio{
-    static Character[] palabra = {'A','B','C','D','E','F','G','H'};
+    static Character[] palabra = {'T','R','O','M','P','E','T','A'};
     static int intentos = 6;
     static List<Palabra> palabras = new ArrayList<Palabra>();
 
-    private static Wordle wordle = new Wordle(null,null,0);
+    private static Wordle wordle = new Wordle(palabra,palabras,intentos);
     
     
     @Override
-    public void reset(){
-        wordle = new Wordle(null, null, 0);
+    public void reset() {
+        wordle = new Wordle(palabra,palabras,intentos);
     }
 
     @Override
