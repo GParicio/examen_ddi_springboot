@@ -6,8 +6,8 @@ Este repositorio contiene una aplicación de Spring Boot desarrollada como parte
 
 Para ejecutar esta aplicación, es necesario tener Java y Maven instalados en su máquina, los pasos para ejecutarlo son los siguientes:
 
-1. Clona este repositorio en su máquina local utilizando `git clone https://github.com/GParicio/examen_ddi_springboot.git`.
-2. Navega hasta el directorio raíz del proyecto utilizando `cd examen_ddi_springboot`.
+1. Clona este repositorio en su máquina local utilizando `git clone https://github.com/SalesianosZaragoza/recuperacion-wordle-GParicio`.
+2. Navega hasta el directorio raíz del proyecto utilizando `cd recuperacion-wordle-GParicio`.
 3. Ejecuta la aplicación utilizando `mvn spring-boot:run`.
 
 La aplicación debería estar funcionando en `http://localhost:8080`.
