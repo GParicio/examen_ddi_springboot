@@ -1,10 +1,10 @@
-package veterinaria;
+package com.gparicio.recuperacion;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class VeterinariaApplicationTests {
+class RecuperacionApplicationTests {
 
 	@Test
 	void contextLoads() {

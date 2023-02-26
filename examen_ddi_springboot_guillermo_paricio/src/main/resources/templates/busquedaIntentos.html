@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Wordle search tries</title>
+    <style >
+
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap');
+	
+        .font{
+            font-family: 'Merriweather', serif;
+        }
+
+        .base {
+            font-size:3rem;
+            width:5rem;
+            height: 5rem;
+            text-align: center;
+            text-size-adjust:inherit;
+        }
+        .title {
+            font-size: 3rem;
+            text-align: center;
+            text-size-adjust:inherit;
+        }
+        {% comment %} center style {% endcomment %}
+        .table {
+            margin: 0 auto;
+        }
+        {% comment %} align right {% endcomment %}
+        .right {
+            text-align: right;
+        }
+        {% comment %} align left {% endcomment %}
+        {% comment %} center style {% endcomment %}
+    </style>
+    </head>
+
+<body class="bg-secondary font"> 
+    <table align="center">
+        <tr>
+            <td style="table">
+                <h1 class="title">Search tries</h1>
+                <form action="/busquedaIntentos" th:object="${try}" method="POST">
+                    <input class="input-group table" style="width:100px" type="number" name="try" placeholder="Search" min="1" th:max="${tries}" required autofocus />
+                    <br>
+                    <input class="btn bg-primary table" type="submit" value="Search" />
+                    <table>
+                        <tr th:text="'Try number  ' + ${try} + ' out of ' + ${tries}"></tr>
+                        <tr>
+                            <td>
+                                <th:block th:each="letter : ${busquedaIntentos}" th:text="${letter.caracter}"></th:block>
+                            </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td>
+                                <a class="btn btn-outline-light rounded table" style="width:230px" href="/" role="button">Return to the game</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-outline-light rounded table" style="width:230px" href="/checkReset" role="button">Reset game</a>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
